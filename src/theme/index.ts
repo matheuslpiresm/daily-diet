@@ -19,8 +19,8 @@ export default {
         WHITE: '#FFFFFF'
     },
     FONT_FAMILY: {
-        REGULAR: 'Nunito_Sans_400Regular',
-        BOLD: 'Nunito_Sans_700Bold'
+        REGULAR: 'NunitoSans_400Regular',
+        BOLD: 'NunitoSans_700Bold'
     },
     FONT_SIZE: {
         SM: 12,
