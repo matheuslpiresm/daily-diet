@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import Circle from 'phosphor-react-native/src/icons/Circle';
 
 type Props = {
-    status?: boolean
+    status?: boolean;
 }
 
 export const Container = styled.View`

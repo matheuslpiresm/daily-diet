@@ -28,7 +28,7 @@ export function Home() {
             date: '15.02.23',
             meals: [
                 { hour: '09:30', item: 'Vitamina de banana com abacate', status: true },
-                { hour: '09:30', item: 'Vitamina de banana', status: true },
+                { hour: '09:30', item: 'Vitamina de banana', status: false },
                 { hour: '12:30', item: 'X-Tudo', status: false },
             ],
         },
@@ -82,7 +82,7 @@ export function Home() {
                     )}
                     ListEmptyComponent={() => (
                         <ListEmpty message="Que pena, ainda não existem equipes cadastradas!" />
-                      )}
+                    )}
                     showsVerticalScrollIndicator={false}
                 />
 

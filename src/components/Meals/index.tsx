@@ -1,17 +1,17 @@
-import { Container, Hour, Item, IconTypeStyleProps, Icon } from './styles';
+import { Container, Hour, Item, Icon } from './styles';
 
 type Props =  {
     hour: string;
     item: string;
-    status?: IconTypeStyleProps
+    status: boolean;
 }
 
-export function Meals({ hour, item, status= 'DIETA' }: Props) {
+export function Meals({ hour, item, status }: Props) {
     return (
         <Container>
-            <Icon status={status} />
             <Hour>{hour}</Hour>
             <Item>{item}</Item>
+            <Icon status={status} />
         </Container>
     );
 }
