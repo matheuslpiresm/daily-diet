@@ -7,7 +7,7 @@ import { Loading } from '@components/Loading';
 
 import theme from './src/theme'
 
-import { Statistics } from '@screens/Statistics';
+import { NewMeal } from '@screens/NewMeal';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ NunitoSans_400Regular, NunitoSans_700Bold });
@@ -19,7 +19,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Statistics /> : <Loading />}
+      {fontsLoaded ? <NewMeal /> : <Loading />}
     </ThemeProvider>
   );
 }

@@ -6,7 +6,7 @@ type Props = {
     text: string;
 }
 
-export function MealCard({ quantidade, text, type = 'PRIMARY' }: Props) {
+export function MealSmallCard({ quantidade, text, type = 'PRIMARY' }: Props) {
     return (
         <Container
             type={type}

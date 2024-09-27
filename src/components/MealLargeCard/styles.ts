@@ -1,19 +1,15 @@
 import styled from "styled-components/native";
 
-export type ContainerTypeStyleProps = 'PRIMARY' | 'SECONDARY';
-
-type Props = {
-    type: ContainerTypeStyleProps;
-}
-
-export const Container = styled.View<Props>`
-    width: 157px;
-    height: 107px;
+export const Container = styled.View`
+    width: 327px;
+    height: 89px;
 
     border-radius: 8px;
     justify-content: center;
 
-    background-color: ${({ theme, type }) => type === 'PRIMARY' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
+    background-color: ${({ theme }) => theme.COLORS.GRAY_6};
+
+    margin-top: 15px
 `;
 
 export const Title = styled.Text`

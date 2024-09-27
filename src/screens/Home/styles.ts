@@ -4,16 +4,15 @@ import ArrowUpRight from 'phosphor-react-native/src/icons/ArrowUpRight';
 export const Container = styled.View`
     flex: 1;
     align-items: center;
-    
 `;
 
 export const LogoContainer = styled.View`
-    width: 100%;
+    width: 327px;
     margin-top: 50px;
+    
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 35px;
 `;
 
 export const Logo = styled.Image`
@@ -27,7 +26,7 @@ export const StatisticsContainer = styled.View`
     background-color: ${({ theme }) => theme.COLORS.GREEN_LIGHT};
     border-radius: 8px ;
 
-    margin-top: 35px;
+    margin-top: 20px;
 `
 
 export const StatisticsButton = styled.TouchableOpacity`

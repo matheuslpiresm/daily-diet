@@ -27,7 +27,6 @@ export const BackIcon = styled(ArrowLeft).attrs(({ theme }) => ({
 }))``;
 
 export const MainContent = styled.View`
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 `;
@@ -38,5 +37,12 @@ export const Title = styled.Text`
 
     margin-top: 30px;
     text-align: center;
+`;
 
+export const SmallCardsContent = styled.View`
+    width: 327px;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 `;
