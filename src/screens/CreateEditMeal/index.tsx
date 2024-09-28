@@ -5,7 +5,8 @@ import { Button } from '@components/Button';
 import { SelectButton } from '@components/SelectButton';
 import { Input } from '@components/Input';
 
-export function NewMeal() {
+export function CreateEditMeal() {
+    const mode = 'create';
 
     return (
         <Container>
@@ -13,7 +14,10 @@ export function NewMeal() {
                 <BackButton onPress={() => { }}>
                     <BackIcon />
                 </BackButton>
-                <Title>Nova refeição</Title>
+            
+                <Title>
+                 {mode === 'create'? "Nova refeição" : "Editar refeição"}
+                </Title>
             </Header>
 
             <Input
@@ -52,9 +56,8 @@ export function NewMeal() {
                 />
             </ContainerButtonSelect>
 
-
             <Button
-                title='Cadastrar refeição'
+                title={ mode == 'create' ? 'Cadastrar refeição' : 'Editar refeição'}
                 style={{ marginTop: 50 }}
             />
         </Container>
