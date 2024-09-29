@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import { TextInput } from 'react-native';
 
 import ArrowLeft from 'phosphor-react-native/src/icons/ArrowLeft';
 
@@ -25,18 +24,6 @@ export const Title = styled.Text`
     margin-top: 20px;
     margin-bottom: 10px;
 `;
-
-export const BackButton = styled.TouchableOpacity`
-    position: absolute;
-
-    left: 20px;
-    top: 45px;
-`;
-
-export const BackIcon = styled(ArrowLeft).attrs(({ theme }) => ({
-    size: 30,
-    color: theme.COLORS.GRAY_2
-}))``;
 
 export const ContainerDateHour = styled.View`
     width: 327px;
