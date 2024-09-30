@@ -7,7 +7,7 @@ import { Loading } from '@components/Loading';
 
 import theme from './src/theme'
 
-import { CreateEditMeal } from '@screens/CreateEditMeal';
+import { Meal } from '@screens/Meal';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ NunitoSans_400Regular, NunitoSans_700Bold });
@@ -19,7 +19,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <CreateEditMeal /> : <Loading />}
+      {fontsLoaded ? <Meal /> : <Loading />}
     </ThemeProvider>
   );
 }
