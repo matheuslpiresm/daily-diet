@@ -1,5 +1,7 @@
 import { Container, StatisticsContainer, LogoContainer, Logo, StatisticsButton, StatisticsIcon, Title, MealsContainer, Date } from './styles';
 
+import { useNavigation } from '@react-navigation/native'
+
 import { Highlight } from '@components/Highlight';
 import { Button } from '@components/Button';
 import { Meals } from '@components/Meals';
@@ -13,6 +15,8 @@ import { ListEmpty } from '@components/ListEmpty';
 
 
 export function Home() {
+
+    const navigation = useNavigation();
 
     const mealData = [
         {
@@ -34,6 +38,10 @@ export function Home() {
             ],
         },
     ];
+    
+    function handleNewMeal(){
+        navigation.navigate('statistics')
+    }
 
     return (
         <Container>
@@ -57,6 +65,7 @@ export function Home() {
                     Refeições
                 </Title>
                 <Button
+                    onPress={handleNewMeal}
                     icon={<Plus size={20} color="white" />}
                     title="Nova refeição"
                     type="ADD"
