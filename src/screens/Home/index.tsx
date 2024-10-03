@@ -38,9 +38,13 @@ export function Home() {
             ],
         },
     ];
-    
-    function handleNewMeal(){
-        navigation.navigate('statistics')
+
+    function handleNewMeal() {
+        navigation.navigate('createEdit', { mode: 'create' });
+    }
+
+    function handleSeeStatistics() {
+        navigation.navigate('statistics');
     }
 
     return (
@@ -51,7 +55,8 @@ export function Home() {
             </LogoContainer>
 
             <StatisticsContainer>
-                <StatisticsButton>
+                <StatisticsButton
+                    onPress={handleSeeStatistics}>
                     <StatisticsIcon />
                 </StatisticsButton>
                 <Highlight
@@ -94,7 +99,7 @@ export function Home() {
                         <ListEmpty message="Que pena, ainda não existem equipes cadastradas!" />
                     )}
                     showsVerticalScrollIndicator={false}
-                    contentContainerStyle={ { paddingBottom: 50 }}
+                    contentContainerStyle={{ paddingBottom: 50 }}
                 />
 
             </MealsContainer>

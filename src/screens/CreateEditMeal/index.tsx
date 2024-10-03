@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import { Container, Title, ContainerDateHour, ContainerButtonSelect } from './styles';
+
+import { useNavigation } from '@react-navigation/native';
 
 import { Button } from '@components/Button';
 import { SelectButton } from '@components/SelectButton';
@@ -9,6 +10,12 @@ import { Header } from '@components/Header';
 export function CreateEditMeal() {
     const mode = 'create';
     const OnDiet = true;
+
+    const navigation = useNavigation();
+
+    function handleGoHome(){
+        navigation.navigate('home');
+    }
 
     return (
         <Container>
@@ -55,6 +62,7 @@ export function CreateEditMeal() {
             <Button
                 title={mode == 'create' ? 'Cadastrar refeição' : 'Editar refeição'}
                 style={{ marginTop: 50 }}
+                onPress={handleGoHome}
             />
         </Container>
     );

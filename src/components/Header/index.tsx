@@ -9,7 +9,7 @@ type Props = {
 export function Header({ title, type = 'DEFAULT' }: Props) {
     const navigation = useNavigation();
 
-    function handleGoBack(){
+    function handleGoHome(){
         navigation.navigate('home');
     }
 
@@ -17,7 +17,7 @@ export function Header({ title, type = 'DEFAULT' }: Props) {
         <Container
             type={type}
         >
-            <BackButton onPress={handleGoBack}>
+            <BackButton onPress={handleGoHome}>
                 <BackIcon />
             </BackButton>
 

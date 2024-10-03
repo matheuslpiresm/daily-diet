@@ -39,5 +39,4 @@ export const OptionText = styled.Text`
 
 export const ContainerButtonSelect = styled.View`
     flex-direction: row;
-    margin-bottom: 80px;
 `;

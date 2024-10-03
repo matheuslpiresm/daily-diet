@@ -1,15 +1,24 @@
 
 import { Container, Header, BackButton, BackIcon, MainContent, Title, SmallCardsContent } from './styles';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { Highlight } from '@components/Highlight'
 import { MealLargeCard } from '@components/MealLargeCard';
 import { MealSmallCard } from '@components/MealSmallCard';
 
 export function Statistics() {
+
+    const navigation = useNavigation();
+    
+    function handleGoHome(){
+        navigation.navigate('home');
+    }
+
     return (
         <Container>
             <Header>
-                <BackButton onPress={() => { }}>
+                <BackButton onPress={handleGoHome}>
                     <BackIcon />
                 </BackButton>
                 <Highlight
