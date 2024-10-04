@@ -1,14 +1,17 @@
 import styled from "styled-components/native";
+
+import { SafeAreaView } from "react-native-safe-area-context";  
+
 import ArrowUpRight from 'phosphor-react-native/src/icons/ArrowUpRight';
 
-export const Container = styled.View`
+export const Container = styled(SafeAreaView)`
     flex: 1;
     align-items: center;
 `;
 
 export const LogoContainer = styled.View`
     width: 327px;
-    margin-top: 50px;
+    margin-top: 25px;
     
     flex-direction: row;
     align-items: center;

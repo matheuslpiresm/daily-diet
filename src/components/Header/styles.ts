@@ -22,7 +22,6 @@ export const Title = styled.Text`
     font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
 
     text-align: center;
-    margin-top: 20px;
     margin-bottom: 10px;
 `;
 
@@ -31,7 +30,7 @@ export const BackButton = styled.TouchableOpacity`
     z-index: 1;
 
     left: 20px;
-    top: 45px;
+    top: 30px;
 `;
 
 export const BackIcon = styled(ArrowLeft).attrs(({ theme }) => ({

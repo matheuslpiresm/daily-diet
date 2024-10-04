@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
 
-import ArrowLeft from 'phosphor-react-native/src/icons/ArrowLeft';
+import { SafeAreaView } from "react-native-safe-area-context";  
 
-export const Container = styled.View`
+export const Container = styled(SafeAreaView)`
     flex: 1;
     align-items: center;
 `;
