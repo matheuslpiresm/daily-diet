@@ -1,6 +1,6 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
-import { SafeAreaView } from "react-native-safe-area-context";  
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import ArrowUpRight from 'phosphor-react-native/src/icons/ArrowUpRight';
 
@@ -30,7 +30,7 @@ export const StatisticsContainer = styled.View`
     border-radius: 8px ;
 
     margin-top: 20px;
-`
+`;
 
 export const StatisticsButton = styled.TouchableOpacity`
     position: absolute;
@@ -49,18 +49,22 @@ export const MealsContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-    margin-top: 30px;
-    margin-bottom: 10px;
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.XL}px;
+        color: ${theme.COLORS.GRAY_1}
 
-    align-items: flex-start;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        align-items: flex-start;
+    `};
+`;
 
-    font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
-    color: ${({ theme }) => theme.COLORS.GRAY_1}
-`
 export const Date = styled.Text`
-    font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
-    color: ${({ theme }) => theme.COLORS.GRAY_1};
-    font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.XL}px;
+        color: ${theme.COLORS.GRAY_1};
+        font-family: ${theme.FONT_FAMILY.BOLD};
 
-    margin-top: 20px;
+        margin-top: 20px;
+    `};
 `;

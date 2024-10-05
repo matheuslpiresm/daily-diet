@@ -14,9 +14,9 @@ export const Message = styled.Text`
     margin-bottom: 100px;
 
     ${({ theme }) => css`
-    font-size: ${theme.FONT_SIZE.SM}px;
-    font-family: ${theme.FONT_FAMILY.REGULAR};
-    color: ${theme.COLORS.GRAY_1};
+        font-size: ${theme.FONT_SIZE.SM}px;
+        font-family: ${theme.FONT_FAMILY.REGULAR};
+        color: ${theme.COLORS.GRAY_1};
     `};
 `;
 

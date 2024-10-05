@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import { TextInput } from 'react-native';
 
 export type InputTypeStyleProps = 'ITEM' | 'DESCRIPTION' | 'DATE' | 'HOUR';
@@ -12,11 +12,13 @@ export const Container = styled.View`
 `;
 
 export const Label = styled.Text`
-    font-size: ${({ theme }) => theme.FONT_SIZE.MD}px; 
-    font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
-    
-    margin-bottom: 8px;
-    margin-top: 30px;
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.MD}px; 
+        font-family: ${theme.FONT_FAMILY.BOLD};
+        
+        margin-bottom: 8px;
+        margin-top: 30px;
+    `};
 `;
 
 export const InputContent = styled(TextInput) <PropsInput>`

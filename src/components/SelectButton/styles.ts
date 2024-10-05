@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 import Circle from 'phosphor-react-native/src/icons/Circle';
 
@@ -10,7 +10,7 @@ export const Container = styled.View`
     width: 160px;
     height: 50px;
 
-    background-color: ${({ theme}) => theme.COLORS.GRAY_6};
+    background-color: ${({ theme }) => theme.COLORS.GRAY_6};
     border-radius: 6px;
 
     flex-direction: row;
@@ -21,15 +21,17 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-    font-size: ${({ theme}) => theme.FONT_SIZE.MD}px;
-    font-family: ${({ theme}) => theme.FONT_FAMILY.BOLD};
-    color: ${({ theme }) => theme.COLORS.GRAY_1};
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.MD}px;
+        font-family: ${theme.FONT_FAMILY.BOLD};
+        color: ${theme.COLORS.GRAY_1};
+    `};
 `;
 
 export const Icon = styled(Circle).attrs<Props>(({ theme, status }) => ({
     size: 20,
-    weight:"fill",
+    weight: "fill",
     color: status ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK,
-}))<Props>`
+})) <Props>`
     margin-right: 10px;
 `;

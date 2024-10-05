@@ -1,8 +1,8 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 import ArrowLeft from 'phosphor-react-native/src/icons/ArrowLeft';
 
-export type HeaderTypeStyleProps = 'SUCCESS' | 'FAIL' | 'DEFAULT'; 
+export type HeaderTypeStyleProps = 'SUCCESS' | 'FAIL' | 'DEFAULT';
 
 type Props = {
     type: HeaderTypeStyleProps;
@@ -14,15 +14,17 @@ export const Container = styled.View<Props>`
 
     justify-content: center;
 
-    background-color: ${({ theme, type }) => type === 'SUCCESS' ? theme.COLORS.GREEN_LIGHT : type === 'FAIL' ?  theme.COLORS.RED_LIGHT : type === 'DEFAULT' ? theme.COLORS.GRAY_6 : undefined};
+    background-color: ${({ theme, type }) => type === 'SUCCESS' ? theme.COLORS.GREEN_LIGHT : type === 'FAIL' ? theme.COLORS.RED_LIGHT : type === 'DEFAULT' ? theme.COLORS.GRAY_6 : undefined};
 `;
 
 export const Title = styled.Text`
-    font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
-    font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.XL}px;
+        font-family: ${theme.FONT_FAMILY.BOLD};
 
-    text-align: center;
-    margin-bottom: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+    `};
 `;
 
 export const BackButton = styled.TouchableOpacity`

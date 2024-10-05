@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import Circle from 'phosphor-react-native/src/icons/Circle';
 
 type Props = {
@@ -18,24 +18,28 @@ export const Container = styled.View`
 `;
 
 export const Hour = styled.Text`
-    color: ${({ theme }) => theme.COLORS.GRAY_1};
-    font-size: ${({ theme }) => theme.FONT_SIZE.SM}px;
-    font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
-    margin-left: 20px;
+    ${({ theme }) => css`
+        color: ${theme.COLORS.GRAY_1};
+        font-size: ${theme.FONT_SIZE.SM}px;
+        font-family: ${theme.FONT_FAMILY.BOLD};
 
+        margin-left: 20px;
+    `};
 `;
 
 export const Item = styled.Text`
-    color: ${({ theme }) => theme.COLORS.GRAY_1};
-    font-size: ${({ theme }) => theme.FONT_SIZE.SM}px;
-    margin-left: 20px;
+    ${({ theme }) => css`
+        color: ${theme.COLORS.GRAY_1};
+        font-size: ${theme.FONT_SIZE.SM}px;
+        margin-left: 20px;
+    `};
 `;
 
 export const Icon = styled(Circle).attrs<Props>(({ theme, status }) => ({
     size: 20,
-    weight:"fill",
+    weight: "fill",
     color: status ? theme.COLORS.GREEN_MID : theme.COLORS.RED_MID,
-}))<Props>`
+})) <Props>`
     position: absolute;
     right: 10px;
 `;

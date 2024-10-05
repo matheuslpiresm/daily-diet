@@ -1,6 +1,6 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
-import { SafeAreaView } from "react-native-safe-area-context";  
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const Container = styled(SafeAreaView)`
     flex: 1;
@@ -17,12 +17,14 @@ export const Header = styled.View`
 `;
 
 export const Title = styled.Text`
-    font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
-    font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.XL}px;
+        font-family: ${theme.FONT_FAMILY.BOLD};
 
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    `};
 `;
 
 export const ContainerDateHour = styled.View`

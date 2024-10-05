@@ -1,6 +1,6 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
-import { SafeAreaView } from "react-native-safe-area-context";  
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import ArrowLeft from 'phosphor-react-native/src/icons/ArrowLeft';
 
@@ -12,7 +12,7 @@ export const Header = styled.View`
     width: 100%;
     height: 168px;
 
-    background-color: ${({theme}) => theme.COLORS.RED_LIGHT};
+    background-color: ${({ theme }) => theme.COLORS.RED_LIGHT};
 `;
 
 export const BackButton = styled.TouchableOpacity`
@@ -34,8 +34,10 @@ export const MainContent = styled.View`
 `;
 
 export const Title = styled.Text`
-    font-size: ${({theme}) => theme.FONT_SIZE.XL}px;
-    font-family: ${({theme}) => theme.FONT_FAMILY.BOLD};
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.XL}px;
+        font-family: ${theme.FONT_FAMILY.BOLD};
+    `};
 
     margin-top: 30px;
     text-align: center;

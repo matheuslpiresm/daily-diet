@@ -1,6 +1,6 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
-import { SafeAreaView } from "react-native-safe-area-context";  
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import Circle from 'phosphor-react-native/src/icons/Circle';
 
@@ -19,27 +19,35 @@ export const MealContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-    font-size: ${({ theme }) => theme.FONT_SIZE.XXL}px;
-    font-family:  ${({ theme }) => theme.FONT_FAMILY.BOLD};
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.XXL}px;
+        font-family: ${theme.FONT_FAMILY.BOLD};
 
-    margin-top: 40px;
+        margin-top: 40px;
+    `};
 `;
 
 export const Description = styled.Text`
-    font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
-    font-family:  ${({ theme }) => theme.FONT_FAMILY.REGULAR};
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.XL}px;
+        font-family:  ${theme.FONT_FAMILY.REGULAR};
+    `};
 `;
 
 export const Subtitle = styled.Text`
-    font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
-    font-family:  ${({ theme }) => theme.FONT_FAMILY.BOLD};
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.XL}px;
+        font-family:  ${theme.FONT_FAMILY.BOLD};
 
-    margin-top: 20px;
+        margin-top: 20px;
+    `};
 `;
 
 export const DateAndHour = styled.Text`
-    font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
-    font-family:  ${({ theme }) => theme.FONT_FAMILY.REGULAR};
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.LG}px;
+        font-family:  ${theme.FONT_FAMILY.REGULAR};
+    `};
 `;
 
 export const TagStatus = styled.View`
@@ -56,16 +64,17 @@ export const TagStatus = styled.View`
 `;
 
 export const TagText = styled.Text`
-    font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
-    font-family:  ${({ theme }) => theme.FONT_FAMILY.REGULAR};
-    color: ${({ theme }) => theme.COLORS.GRAY_1};
-
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.XL}px;
+        font-family:  ${({ theme }) => theme.FONT_FAMILY.REGULAR};
+        color: ${theme.COLORS.GRAY_1};
+    `};
 `;
 
 export const TagIcon = styled(Circle).attrs<Props>(({ theme, status }) => ({
     size: 15,
-    weight:"fill",
+    weight: "fill",
     color: status ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK,
-}))<Props>`
+})) <Props>`
     margin-right: 10px;
 `;

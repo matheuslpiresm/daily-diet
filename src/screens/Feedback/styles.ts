@@ -1,6 +1,6 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
-import { SafeAreaView } from "react-native-safe-area-context";  
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 export const Container = styled(SafeAreaView)`
@@ -11,22 +11,25 @@ export const Container = styled(SafeAreaView)`
 `;
 
 export const Title = styled.Text`
-    font-size: ${({theme}) => theme.FONT_SIZE.XXL}px;
-    font-family: ${({theme}) => theme.FONT_FAMILY.BOLD};
-    color: ${({theme}) => theme.COLORS.GREEN_DARK};
-    
-    padding: 5px 20px;
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.XXL}px;
+        font-family: ${theme.FONT_FAMILY.BOLD};
+        color: ${theme.COLORS.GREEN_DARK};
+        
+        padding: 5px 20px;
+    `};
 `;
 
 export const Subtitle = styled.Text`
-    font-size: ${({theme}) => theme.FONT_SIZE.MD}px;
-    font-family: ${({theme}) => theme.FONT_FAMILY.REGULAR};
-    color: ${({theme}) => theme.COLORS.GRAY_1};
+    ${({ theme }) => css`
+        font-size: ${theme.FONT_SIZE.MD}px;
+        font-family: ${theme.FONT_FAMILY.REGULAR};
+        color: ${theme.COLORS.GRAY_1};
 
-    text-align: center;
-    padding: 0 20px;
-    margin-bottom: 40px;
-
+        text-align: center;
+        padding: 0 20px;
+        margin-bottom: 40px;
+    `};
 `;
 
 export const Image = styled.Image`
