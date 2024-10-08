@@ -1,5 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
 import { Container, Title, BackButton, BackIcon, HeaderTypeStyleProps } from './styles';
+
+import { useNavigation } from '@react-navigation/native';
 
 type Props = {
     title: string;
@@ -9,7 +10,7 @@ type Props = {
 export function Header({ title, type = 'DEFAULT' }: Props) {
     const navigation = useNavigation();
 
-    function handleGoHome(){
+    function handleGoHome() {
         navigation.navigate('home');
     }
 

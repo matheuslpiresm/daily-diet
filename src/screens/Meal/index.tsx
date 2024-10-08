@@ -1,5 +1,6 @@
-import { Header } from '@components/Header';
 import { Container, MealContainer, Title, Subtitle, Description, DateAndHour, TagStatus, TagText, TagIcon } from './styles';
+
+import { Header } from '@components/Header';
 
 export function Meal() {
 
@@ -28,7 +29,7 @@ export function Meal() {
                     <TagIcon
                         status={OnDiet}
                     />
-                    <TagText>{OnDiet? 'dentro da dieta' : 'fora da dieta'}</TagText>
+                    <TagText>{OnDiet ? 'dentro da dieta' : 'fora da dieta'}</TagText>
                 </TagStatus>
             </MealContainer>
         </Container>

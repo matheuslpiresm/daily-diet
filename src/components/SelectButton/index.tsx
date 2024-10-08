@@ -1,6 +1,6 @@
 import { Container, Title, Icon } from './styles';
 
-type Props =  {
+type Props = {
     title: string;
     status: boolean;
 }

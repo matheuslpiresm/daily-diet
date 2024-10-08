@@ -13,7 +13,7 @@ export function CreateEditMeal() {
 
     const navigation = useNavigation();
 
-    function handleGoHome(){
+    function handleGoHome() {
         navigation.navigate('home');
     }
 

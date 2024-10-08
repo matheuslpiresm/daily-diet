@@ -1,17 +1,17 @@
 import { Container, StatisticsContainer, LogoContainer, Logo, StatisticsButton, StatisticsIcon, Title, MealsContainer, Date } from './styles';
 
 import { useNavigation } from '@react-navigation/native'
+import { FlatList } from 'react-native';
 
 import { Highlight } from '@components/Highlight';
 import { Button } from '@components/Button';
 import { Meals } from '@components/Meals';
+import { ListEmpty } from '@components/ListEmpty';
 
 import logoImg from '@assets/logo.png';
 import avatarImg from '@assets/avatar.png';
 
 import Plus from 'phosphor-react-native/src/icons/Plus';
-import { FlatList } from 'react-native';
-import { ListEmpty } from '@components/ListEmpty';
 
 
 export function Home() {

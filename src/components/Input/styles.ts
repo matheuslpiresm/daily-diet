@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components/native";
+
 import { TextInput } from 'react-native';
 
 export type InputTypeStyleProps = 'ITEM' | 'DESCRIPTION' | 'DATE' | 'HOUR';

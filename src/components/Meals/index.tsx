@@ -1,6 +1,6 @@
 import { Container, Hour, Item, Icon } from './styles';
 
-type Props =  {
+type Props = {
     hour: string;
     item: string;
     status: boolean;

@@ -10,8 +10,8 @@ import { MealSmallCard } from '@components/MealSmallCard';
 export function Statistics() {
 
     const navigation = useNavigation();
-    
-    function handleGoHome(){
+
+    function handleGoHome() {
         navigation.navigate('home');
     }
 

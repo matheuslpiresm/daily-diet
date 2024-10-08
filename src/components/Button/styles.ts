@@ -1,5 +1,6 @@
-import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
+
+import { TouchableOpacity } from "react-native";
 
 export type ButtonTypeStyleProps = 'ADD' | 'DELETE';
 
@@ -24,8 +25,8 @@ export const Container = styled(TouchableOpacity) <Props>`
 export const Title = styled.Text <Props>`
     color: ${({ theme, type }) => type === 'ADD' ? theme.COLORS.WHITE : theme.COLORS.GRAY_1};
 
-    font-family: ${({ theme}) => theme.FONT_FAMILY.BOLD};
-    font-size: ${({ theme}) => theme.FONT_SIZE.MD}px;
+    font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+    font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
 `;
 
 export const IconContainer = styled.View`

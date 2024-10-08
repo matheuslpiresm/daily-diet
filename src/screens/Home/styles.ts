@@ -51,7 +51,7 @@ export const MealsContainer = styled.View`
 export const Title = styled.Text`
     ${({ theme }) => css`
         font-size: ${theme.FONT_SIZE.XL}px;
-        color: ${theme.COLORS.GRAY_1}
+        color: ${theme.COLORS.GRAY_1};
 
         margin-top: 30px;
         margin-bottom: 10px;
