@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Container, Title, ContainerDateHour, ContainerButtonSelect } from './styles';
 
 import { useNavigation } from '@react-navigation/native';
@@ -8,6 +10,11 @@ import { Input } from '@components/Input';
 import { Header } from '@components/Header';
 
 export function CreateEditMeal() {
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
+    const [date, setDate] = useState('');
+    const [hour, setHour] = useState('');
+
     const mode = 'create';
     const OnDiet = true;
 
@@ -15,6 +22,18 @@ export function CreateEditMeal() {
 
     function handleGoHome() {
         navigation.navigate('home');
+    }
+
+    function handleSubmit() {
+        const mealData = {
+            name,
+            description,
+            date,
+            hour,
+        };
+        console.log(mealData);
+        // Aqui você pode enviar os dados para uma API ou para o estado global
+        handleGoHome();
     }
 
     return (
@@ -26,22 +45,30 @@ export function CreateEditMeal() {
             <Input
                 label={'Nome'}
                 input={'ITEM'}
+                value={name}
+                onChangeText={setName}
             />
 
             <Input
                 label={'Descrição'}
                 input={'DESCRIPTION'}
+                value={description}
+                onChangeText={setDescription}
             />
 
             <ContainerDateHour>
                 <Input
                     label={'Data'}
                     input={'DATE'}
+                    value={date}
+                    onChangeText={setDate}
                 />
 
                 <Input
                     label={'Hora'}
                     input={'HOUR'}
+                    value={hour}
+                    onChangeText={setHour}
                 />
             </ContainerDateHour>
 
@@ -62,7 +89,7 @@ export function CreateEditMeal() {
             <Button
                 title={mode == 'create' ? 'Cadastrar refeição' : 'Editar refeição'}
                 style={{ marginTop: 50 }}
-                onPress={handleGoHome}
+                onPress={handleSubmit}
             />
         </Container>
     );
