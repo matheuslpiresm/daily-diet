@@ -2,7 +2,7 @@ import { Container, Label, InputContent, InputTypeStyleProps } from './styles';
 
 type PropsInput = {
     input: InputTypeStyleProps;
-    value: string;
+    value?: string;
     onChangeText: (text: string) => void; 
 }
 

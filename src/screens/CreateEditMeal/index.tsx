@@ -8,6 +8,7 @@ import { Button } from '@components/Button';
 import { SelectButton } from '@components/SelectButton';
 import { Input } from '@components/Input';
 import { Header } from '@components/Header';
+import { mealCreate } from '@storage/meal/mealCreate';
 
 export function CreateEditMeal() {
     const [name, setName] = useState('');
@@ -20,20 +21,27 @@ export function CreateEditMeal() {
 
     const navigation = useNavigation();
 
-    function handleGoHome() {
-        navigation.navigate('home');
-    }
+    // function handleGoHome() {
+    //     navigation.navigate('home');
+    // }
 
-    function handleSubmit() {
-        const mealData = {
-            name,
-            description,
-            date,
-            hour,
-        };
-        console.log(mealData);
-        // Aqui você pode enviar os dados para uma API ou para o estado global
-        handleGoHome();
+   async function handleNewMeal() {
+        try {
+            const mealData = {
+                name: name,
+                description: description,
+                date: date,
+                hour: hour,
+            };
+
+            await mealCreate(mealData)
+            navigation.navigate('home', { name });
+
+
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
     return (
@@ -89,7 +97,7 @@ export function CreateEditMeal() {
             <Button
                 title={mode == 'create' ? 'Cadastrar refeição' : 'Editar refeição'}
                 style={{ marginTop: 50 }}
-                onPress={handleSubmit}
+                onPress={handleNewMeal}
             />
         </Container>
     );
