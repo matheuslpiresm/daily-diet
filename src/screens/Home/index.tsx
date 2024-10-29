@@ -28,38 +28,33 @@ export function Home() {
     const navigation = useNavigation();
     const [name, setName] = useState('');
 
-    // const DATA = [
-    //     {
-    //         date: '18/05/2024',
-    //         hour: '10:25',
-    //         data: ['Pizza', 'Burger', 'Risotto'],
-    //     },
-    //     {
-    //         date: '19/05/2024',
-    //         hour: '10:25',
-    //         data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
-    //     },
-    //     {
-    //         date: '20/05/2024',
-    //         hour: '10:25',
-    //         data: ['Water', 'Coke', 'Beer'],
-    //     },
-    //     {
-    //         date: '21/05/2024',
-    //         hour: '10:25',
-    //         data: ['Cheese Cake', 'Ice Cream'],
-    //     },
-    //     {
-    //         date: '21/05/2024',
-    //         hour: '10:25',
-    //         data: ['Cheese Cake', 'Ice Cream'],
-    //     },
-    //     {
-    //         date: '21/05/2024',
-    //         hour: '10:25',
-    //         data: ['Cheese Cake', 'Ice Cream'],
-    //     },
-    // ];
+    const DATA = [
+        {
+            date: '18/05/2024',
+            hour: '10:25',
+            data: ['Pizza', 'Burger', 'Risotto'],
+        },
+        {
+            date: '19/05/2024',
+            hour: '10:26',
+            data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+        },
+        {
+            date: '20/05/2024',
+            hour: '10:27',
+            data: ['Water', 'Coke', 'Beer'],
+        },
+        {
+            date: '21/05/2024',
+            hour: '10:28',
+            data: ['Cheese Cake', 'Ice Cream'],
+        },
+        {
+            date: '22/05/2024',
+            hour: '10:29',
+            data: ['Cheese Cake', 'Ice Cream'],
+        },
+    ];
 
 
     function handleNewMeal() {
@@ -81,10 +76,6 @@ export function Home() {
     }
 
     useEffect(() => {
-        console.log(meal);
-
-        console.log('executou');
-
         fetchMeals();
     }, []);
 
@@ -117,8 +108,8 @@ export function Home() {
                     type="ADD"
                 />
 
-                {/* <SectionList
-                    sections={}
+                {<SectionList
+                    sections={DATA}
                     keyExtractor={(item, index) => item + index}
                     renderItem={({ item, section }) => (
                         <View>
@@ -133,7 +124,7 @@ export function Home() {
                     renderSectionHeader={({ section: { date } }) => (
                         <Date>{date}</Date>
                     )}
-                /> */}
+                />}
 
             </MealsContainer>
         </Container>
