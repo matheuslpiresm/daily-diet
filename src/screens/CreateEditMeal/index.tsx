@@ -25,17 +25,18 @@ export function CreateEditMeal() {
     //     navigation.navigate('home');
     // }
 
-   async function handleNewMeal() {
-        try {
-            const mealData = {
-                name: name,
-                description: description,
-                date: date,
-                hour: hour,
-            };
+    async function handleNewMeal() {
+        const newMeal = {
+            name: name,
+            description: description,
+            date: date,
+            hour: hour
+        };
 
-            await mealCreate(mealData)
-            navigation.navigate('home', { name });
+        try {
+
+            await mealCreate(newMeal)
+            navigation.navigate('home');
 
 
         } catch (error) {

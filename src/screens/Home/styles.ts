@@ -68,3 +68,9 @@ export const Date = styled.Text`
         margin-top: 20px;
     `};
 `;
+
+export const View = styled.View`
+`;
+
+export const Text = styled.Text`
+`;

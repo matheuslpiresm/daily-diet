@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
-import { Container, StatisticsContainer, LogoContainer, Logo, StatisticsButton, StatisticsIcon, Title, MealsContainer, Date } from './styles';
+import { Container, StatisticsContainer, LogoContainer, Logo, StatisticsButton, StatisticsIcon, Title, MealsContainer, Date, View, Text } from './styles';
 
 import { useNavigation } from '@react-navigation/native'
-import { FlatList } from 'react-native';
+import { FlatList, SectionList } from 'react-native';
 
 import { Highlight } from '@components/Highlight';
 import { Button } from '@components/Button';
@@ -16,16 +16,51 @@ import avatarImg from '@assets/avatar.png';
 import Plus from 'phosphor-react-native/src/icons/Plus';
 import { mealsGetAll } from '@storage/meal/mealsGetAll';
 
-export type MealType= {
+export type MealType = {
     name: string;
     description: string;
     date: string;
     hour: string;
-  };
+};
 
 export function Home() {
     const [meal, setMeal] = useState<string[]>(['']);
     const navigation = useNavigation();
+    const [name, setName] = useState('');
+
+    // const DATA = [
+    //     {
+    //         date: '18/05/2024',
+    //         hour: '10:25',
+    //         data: ['Pizza', 'Burger', 'Risotto'],
+    //     },
+    //     {
+    //         date: '19/05/2024',
+    //         hour: '10:25',
+    //         data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+    //     },
+    //     {
+    //         date: '20/05/2024',
+    //         hour: '10:25',
+    //         data: ['Water', 'Coke', 'Beer'],
+    //     },
+    //     {
+    //         date: '21/05/2024',
+    //         hour: '10:25',
+    //         data: ['Cheese Cake', 'Ice Cream'],
+    //     },
+    //     {
+    //         date: '21/05/2024',
+    //         hour: '10:25',
+    //         data: ['Cheese Cake', 'Ice Cream'],
+    //     },
+    //     {
+    //         date: '21/05/2024',
+    //         hour: '10:25',
+    //         data: ['Cheese Cake', 'Ice Cream'],
+    //     },
+    // ];
+
 
     function handleNewMeal() {
         navigation.navigate('createEdit', { mode: 'create' });
@@ -47,9 +82,9 @@ export function Home() {
 
     useEffect(() => {
         console.log(meal);
-        
+
         console.log('executou');
-        
+
         fetchMeals();
     }, []);
 
@@ -82,31 +117,23 @@ export function Home() {
                     type="ADD"
                 />
 
-                <FlatList
-                    data={meal}
-                    keyExtractor={(item) => item.name}
-                    renderItem={({ item }) => (
-                        <>
-                            <Date>{item}</Date>
-                            <FlatList
-                                data={item}
-                                keyExtractor={(meal) => meal}
-                                renderItem={({ item: meal }) => (
-                                    <Meals
-                                        hour={meal}
-                                        item={meal}
-                                        status={true}
-                                    />
-                                )}
+                {/* <SectionList
+                    sections={}
+                    keyExtractor={(item, index) => item + index}
+                    renderItem={({ item, section }) => (
+                        <View>
+                            <Meals
+                                hour={section.hour}
+                                item={item}
+                                status={false}
+                                
                             />
-                        </>
+                        </View>
                     )}
-                    ListEmptyComponent={() => (
-                        <ListEmpty message="Que pena, ainda não existem equipes cadastradas!" />
+                    renderSectionHeader={({ section: { date } }) => (
+                        <Date>{date}</Date>
                     )}
-                    showsVerticalScrollIndicator={false}
-                    contentContainerStyle={{ paddingBottom: 50 }}
-                />
+                /> */}
 
             </MealsContainer>
         </Container>
